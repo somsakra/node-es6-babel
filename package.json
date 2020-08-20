@@ -1,0 +1,23 @@
+{
+  "name": "node-es6-babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node src/index.js",
+    "clean": "rimraf dist",
+    "nodemon": "nodemon src/index.js --exec babel-node -e js",
+    "build": "npm run clean && mkdir dist && babel src -s -d dist --copy-files",
+    "prod": "export NODE_ENV=production||set NODE_ENV=production&&node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "rimraf": "^3.0.2"
+  }
+}
